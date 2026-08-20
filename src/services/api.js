@@ -45,7 +45,7 @@ const fetchKitsuFallback = async (url) => {
   };
 };
 
-export const getPopularMovies = async (page = 1) => {
+export const getPopularManga = async (page = 1) => {
   try {
     return await fetchJikanWithRetry(`${JIKAN_BASE}/top/manga?limit=25&page=${page}`);
   } catch (err) {
@@ -62,7 +62,7 @@ export const getPopularMovies = async (page = 1) => {
   }
 };
 
-export const searchMovies = async (query, page = 1) => {
+export const searchManga = async (query, page = 1) => {
   try {
     return await fetchJikanWithRetry(`${JIKAN_BASE}/manga?q=${encodeURIComponent(query.trim())}&limit=25&order_by=popularity&sort=asc&page=${page}`);
   } catch (err) {

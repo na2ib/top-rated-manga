@@ -1,9 +1,9 @@
-import { useMovieContext } from "../contexts/MovieContext";
-import MovieCard from "../components/MovieCard";
+import { useMangaContext } from "../contexts/MangaContext";
+import MangaCard from "../components/MangaCard";
 import { Heart } from "lucide-react";
 
 function Favorites() {
-  const { favorites } = useMovieContext();
+  const { favorites } = useMangaContext();
 
   if (favorites && favorites.length > 0) {
     return (
@@ -14,13 +14,13 @@ function Favorites() {
         </div>
         
         <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-6">
-          {favorites.map((movie, index) => (
+          {favorites.map((manga, index) => (
             <div 
-              key={movie.mal_id} 
+              key={manga.mal_id} 
               className="animate-in fade-in slide-in-from-bottom-4"
               style={{ animationDuration: '600ms', animationFillMode: 'both', animationDelay: `${index * 50}ms` }}
             >
-              <MovieCard movie={movie} />
+              <MangaCard manga={manga} />
             </div>
           ))}
         </div>

@@ -1,9 +1,9 @@
-import MovieCard from "../components/MovieCard.jsx";
+import MangaCard from "../components/MangaCard.jsx";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Search, Loader2 } from "lucide-react";
 import { 
-    searchMovies as searchManga, 
-    getPopularMovies as getTopManga 
+    searchManga, 
+    getPopularManga as getTopManga 
 } from "../services/api.js"; 
 
 function Home() {
@@ -143,7 +143,7 @@ function Home() {
                 className="animate-in fade-in slide-in-from-bottom-4"
                 style={{ animationDuration: '600ms', animationFillMode: 'both', animationDelay: `${(index % 24) * 50}ms` }}
               >
-                <MovieCard movie={item} />
+                <MangaCard manga={item} />
               </div>
             ))}
           </div>
